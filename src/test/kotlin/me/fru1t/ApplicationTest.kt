@@ -11,11 +11,11 @@ import org.junit.runners.JUnit4
 
 @RunWith(JUnit4::class)
 class ApplicationTest {
-    @Test
-    fun testRoot() = testApplication {
-        client.get("/").apply {
-            assertThat(status).isEqualTo(HttpStatusCode.OK)
-            assertThat(bodyAsText()).isEqualTo("Hello World!")
-        }
+  @Test
+  fun testRoot() = testApplication {
+    client.get("/").apply {
+      assertThat(status).isEqualTo(HttpStatusCode.OK)
+      assertThat(bodyAsText()).isEqualTo("Hello World!")
     }
+  }
 }

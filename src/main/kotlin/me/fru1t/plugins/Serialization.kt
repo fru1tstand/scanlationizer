@@ -10,12 +10,12 @@ import io.ktor.server.routing.get
 import io.ktor.server.routing.routing
 
 fun Application.configureSerialization() {
-    install(ContentNegotiation) {
-        json()
+  install(ContentNegotiation) {
+    json()
+  }
+  routing {
+    get("/json/kotlinx-serialization") {
+      call.respond(mapOf("hello" to "world"))
     }
-    routing {
-        get("/json/kotlinx-serialization") {
-                call.respond(mapOf("hello" to "world"))
-            }
-    }
+  }
 }
